@@ -1,11 +1,11 @@
 package a.lo.mexa.backend.dto;
 
-public class UsuarioDTO {
+public class UserDTO {
     int id;
     String nombre;
     String Correo;
 
-    public UsuarioDTO() {
+    public UserDTO() {
     }
 
     public int getId() {
