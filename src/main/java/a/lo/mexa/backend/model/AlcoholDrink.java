@@ -6,16 +6,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class UserModel {
-
+public class AlcoholDrink {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     int id;
     String nombre;
-    String correo;
-    String contraseña;
+    String mix;
+    String descripcion;
 
-    public UserModel() {
+    public AlcoholDrink() {
     }
 
     public int getId() {
@@ -26,27 +26,27 @@ public class UserModel {
         this.id = id;
     }
 
-    public String getNombre() {
+    public String getName() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
+    public void setName(String nombre) {
         this.nombre = nombre;
     }
 
-    public String getCorreo() {
-        return correo;
+    public String getMix() {
+        return mix;
     }
 
-    public void setCorreo(String correo) {
-        this.correo = correo;
+    public void setMix(String mix) {
+        this.mix = mix;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getDescription() {
+        return descripcion;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setDescription(String descripcion) {
+        this.descripcion = descripcion;
     }
 }
