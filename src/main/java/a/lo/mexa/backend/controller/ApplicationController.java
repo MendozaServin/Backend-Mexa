@@ -22,6 +22,7 @@ public class ApplicationController {
     @Autowired
     ApplicationService applicationService;
 
+    @CrossOrigin(origins = "http://localhost:4200/")
     @ExceptionHandler({ BusinessException.class })
     @ResponseBody
     public ResponseEntity<String> userHandler(BusinessException ex) {
@@ -30,6 +31,7 @@ public class ApplicationController {
 
     //----- USER -----
 
+    @CrossOrigin(origins = "http://localhost:4200/")
     @RequestMapping(value = "/addnewuser", method = RequestMethod.POST)
     public ResponseEntity<User> createuser(@RequestBody User user){
         User usr = applicationService.addUser(user);
@@ -40,12 +42,14 @@ public class ApplicationController {
 
     //----- FOODS -----
 
+    @CrossOrigin(origins = "http://localhost:4200/")
     @RequestMapping(value = "/addHFood", method = RequestMethod.POST)
     public ResponseEntity<HotFood> addHotFood(@RequestBody HotFood hotFood){
         HotFood hFood = applicationService.addHotFood(hotFood);
         return new ResponseEntity(hFood, HttpStatus.CREATED);
     }
 
+    @CrossOrigin(origins = "http://localhost:4200/")
     @RequestMapping(value = "/addCFood", method = RequestMethod.POST)
     public ResponseEntity<ColdFood> addColdFood(@RequestBody ColdFood coldFood){
         ColdFood cFood = applicationService.addColdFood(coldFood);
@@ -54,18 +58,21 @@ public class ApplicationController {
 
     //----- DRINKS -----
 
+    @CrossOrigin(origins = "http://localhost:4200/")
     @RequestMapping(value = "/addHDrink", method = RequestMethod.POST)
     public ResponseEntity<HotDrink> addHotDrink(@RequestBody HotDrink hotDrink){
         HotDrink hDrink = applicationService.addHotDrink(hotDrink);
         return new ResponseEntity(hDrink, HttpStatus.CREATED);
     }
 
+    @CrossOrigin(origins = "http://localhost:4200/")
     @RequestMapping(value = "/addCDrink", method = RequestMethod.POST)
     public ResponseEntity<ColdDrink> addColdDrink(@RequestBody ColdDrink coldDrink){
         ColdDrink cDrink = applicationService.addColdDrink(coldDrink);
         return new ResponseEntity(cDrink, HttpStatus.CREATED);
     }
 
+    @CrossOrigin(origins = "http://localhost:4200/")
     @RequestMapping(value = "/addADrink", method = RequestMethod.POST)
     public ResponseEntity<AlcoholDrink> addAlcoholDrink(@RequestBody AlcoholDrink alcoholDrink){
         AlcoholDrink aDrink = applicationService.addAlcoholDrink(alcoholDrink);
@@ -74,6 +81,7 @@ public class ApplicationController {
 
     //----- DESSERTS -----
 
+    @CrossOrigin(origins = "http://localhost:4200/")
     @RequestMapping(value = "/addD", method = RequestMethod.POST)
     public ResponseEntity<Dessert> addDessert(@RequestBody Dessert dessert){
         Dessert dD = applicationService.addDessert(dessert);
@@ -84,12 +92,14 @@ public class ApplicationController {
 
     //----- FOODS ------
 
+    @CrossOrigin(origins = "http://localhost:4200/")
     @RequestMapping(value = "/getHFood", method = RequestMethod.GET)
     public ResponseEntity<HotFood> gHF(){
         List<HotFood> hotF = applicationService.gHF();
         return new ResponseEntity(hotF, HttpStatus.OK);
     }
 
+    @CrossOrigin(origins = "http://localhost:4200/")
     @RequestMapping(value = "/getCFood", method = RequestMethod.GET)
     public ResponseEntity<ColdFood> gCF(){
         List<ColdFood> coldF = applicationService.gCF();
@@ -98,18 +108,21 @@ public class ApplicationController {
 
     //----- DRINKS -----
 
+    @CrossOrigin(origins = "http://localhost:4200/")
     @RequestMapping(value = "/getHDrink", method = RequestMethod.GET)
     public ResponseEntity<HotDrink> gHD(){
         List<HotDrink> hotD = applicationService.gHD();
         return new ResponseEntity(hotD, HttpStatus.OK);
     }
 
+    @CrossOrigin(origins = "http://localhost:4200/")
     @RequestMapping(value = "/getCDrink", method = RequestMethod.GET)
     public ResponseEntity<ColdDrink> gCD(){
         List<ColdDrink> coldD = applicationService.gCD();
         return new ResponseEntity(coldD, HttpStatus.OK);
     }
 
+    @CrossOrigin(origins = "http://localhost:4200/")
     @RequestMapping(value = "/getADrink", method = RequestMethod.GET)
     public ResponseEntity<AlcoholDrink> gAD(){
         List<AlcoholDrink> alcoholD = applicationService.gAD();
@@ -118,6 +131,7 @@ public class ApplicationController {
 
     //----- DESSERTS -----
 
+    @CrossOrigin(origins = "http://localhost:4200/")
     @RequestMapping(value = "/getD", method = RequestMethod.GET)
     public ResponseEntity<Dessert> gD(){
         List<Dessert> dessertD = applicationService.gD();
