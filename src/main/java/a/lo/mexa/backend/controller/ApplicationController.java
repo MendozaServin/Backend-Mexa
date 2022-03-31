@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/api/1")
+@RequestMapping(value = "/api/v1")
 public class ApplicationController {
 
     @Autowired
